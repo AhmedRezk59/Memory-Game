@@ -16,6 +16,7 @@ let currentIndex = blocks.length, temprorayValue, randomIndex;
 let againScreen = document.querySelector('.end-game');
 let againText = document.querySelector('.again-text');
 let playAgainbtn = document.getElementById('again-btn');
+var yourName;
 
 //shuffling the game blocks
 function shuffle(array) {
@@ -49,7 +50,7 @@ function appendShuffledBlocks() {
 //Starting the game 
 startButton.onclick = function () {
     //Asking for name
-    let yourName = prompt("What is your name ?");
+    yourName = prompt("What is your name ?");
     //checking if the name is valid
     function checkName() {
         if (yourName == null || yourName === "") {
@@ -72,7 +73,7 @@ startButton.onclick = function () {
 function winStatus() {
     if (alikeArr.length === blocks.length) {
         againScreen.style.display = 'block';
-        againText.textContent = 'Congrats! You won'
+        againText.textContent = `Congrats, ${yourName}! You won`
     }
 }
 //update wrong tries number
@@ -128,9 +129,9 @@ blocks.forEach(function (block) {
 });
 
 function playagain() {
-    if (wrongTries === 12) {
+    if (wrongTries === 15) {
         againScreen.style.display = 'block';
-        againText.textContent = 'Unfortunatly! You lost'
+        againText.textContent = `Unfortunatly, ${yourName}! You lost`
     }
 }
 
