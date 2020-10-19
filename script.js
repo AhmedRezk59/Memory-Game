@@ -128,7 +128,7 @@ blocks.forEach(function (block) {
 });
 
 function playagain() {
-    if (wrongTries === 15) {
+    if (wrongTries === 12) {
         againScreen.style.display = 'block';
         againText.textContent = 'Unfortunatly! You lost'
     }
